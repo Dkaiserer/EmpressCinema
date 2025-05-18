@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_margin="8dp"
     android:layout_height="wrap_content"
-    card_view:cardElevation="5dp">
+    card_view:cardElevation="5dp"
+    android:backgroundTint="#FFFF00">
+
 
     <LinearLayout
         android:padding="8dp"

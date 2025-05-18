@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Toolbar hozzáadva -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="Empress Cinema"
+        android:titleTextColor="#000000"
+        android:backgroundTint="#FFFF00"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <Spinner
         android:id="@+id/spinnerTimes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AAAAAA"
+        android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/btnBook"
         android:layout_marginTop="16dp"
         android:text="Foglalás"
+        android:textColor="#000000"
+        android:backgroundTint="#FFFF00"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

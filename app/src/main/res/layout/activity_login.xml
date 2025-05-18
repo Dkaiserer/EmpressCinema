@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="#000000">
 
     <EditText
         android:id="@+id/editEmail"
@@ -13,6 +14,8 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AAAAAA"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +28,8 @@
         android:hint="Jelszó"
         android:inputType="textPassword"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AAAAAA"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editEmail" />
@@ -34,6 +39,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Bejelentkezés"
+        android:textColor="#000000"
+        android:backgroundTint="#FFFF00"
         app:layout_constraintTop_toBottomOf="@id/editPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

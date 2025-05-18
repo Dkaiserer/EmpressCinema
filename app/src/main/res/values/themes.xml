@@ -3,6 +3,15 @@
     <style name="Base.Theme.EmpressCinema" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Splash screen háttérszín -->
+        <item name="android:windowSplashScreenBackground">@color/black</item>
+
+        <!-- Splash screen ikon -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo</item>
+
+        <!-- Az ikon háttérszíne (pl. fehér vagy átlátszó) -->
+        <item name="android:windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
     </style>
 
     <style name="Theme.EmpressCinema" parent="Base.Theme.EmpressCinema" />

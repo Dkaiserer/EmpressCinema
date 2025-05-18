@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,7 +31,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     @Override
     public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Az item_movie layout inflálása
         View view = LayoutInflater.from(context).inflate(R.layout.item_movie, parent, false);
         return new MovieViewHolder(view);
     }
@@ -38,17 +39,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public void onBindViewHolder(MovieViewHolder holder, int position) {
         Movie movie = movieList.get(position);
 
-        // Film cím és műfaj beállítása
         holder.title.setText(movie.getTitle());
         holder.genre.setText(movie.getGenre());
 
-        // A Glide könyvtár segítségével betöltjük a filmet tartalmazó képet
         Glide.with(context)
                 .load(movie.getImageUrl())
                 .placeholder(R.drawable.placeholder)
                 .into(holder.poster);
 
-        // Klikk esemény kezelése
+        // Fade-in animáció hozzáadása
+        Animation fadeIn = AnimationUtils.loadAnimation(context, R.anim.item_fade_in);
+        holder.itemView.startAnimation(fadeIn);
+
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, BookingActivity.class);
             intent.putExtra("movie_id", movie.getId());
@@ -61,7 +63,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         return movieList.size();
     }
 
-    // ViewHolder osztály
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
         TextView title, genre;
         ImageView poster;
@@ -74,5 +75,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         }
     }
 }
+
 
 
